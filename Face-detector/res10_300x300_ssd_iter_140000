@@ -1,0 +1,78 @@
+data
+ AnnotatedData"
+ }/home/arrybn/datasets/face/WIDER_FACE/ssd_annotation_more_16_no_blur_oclusion_pose_invalid_fade_out/300x300/wider_train_lmdb/ 
+ data_data_0_split Split data_data_0_split_0" data_data_0_split_1" data_data_0_split_2" data_data_0_split_3" data_data_0_split_4" data_data_0_split_5" data_data_0_split_6P
+ data_bn BatchNorm data_data_0_split_0" data_bn2
+ data_scale Scale
+ conv1_h Convolution
+ conv1_bn_h BatchNorm
+ conv1_scale_h Scale
+ conv1_relu ReLU
+ conv1_pool Pooling
+ conv1_poolP
+ conv1_pool_conv1_pool_0_split Split
+ conv1_pool" conv1_pool_conv1_pool_0_split_0" conv1_pool_conv1_pool_0_split_1P
+ layer_64_1_conv1_h Convolution conv1_pool_conv1_pool_0_split_0" layer_64_1_conv1_h2
+ msraB
+ constant
+ layer_64_1_bn2_h BatchNorm layer_64_1_conv1_h" layer_64_1_conv1_h2
+ layer_64_1_scale2_h Scale layer_64_1_conv1_h" layer_64_1_conv1_h2
+ layer_64_1_relu2 ReLU layer_64_1_conv1_h" layer_64_1_conv1_hP
+ layer_64_1_conv2_h Convolution layer_64_1_conv1_h" layer_64_1_conv2_h2
+ msraB
+ constant
+ layer_64_1_sum Eltwise layer_64_1_conv2_h conv1_pool_conv1_pool_0_split_1" layer_64_1_sumP
+ layer_128_1_bn1_h BatchNorm layer_64_1_sum" layer_128_1_bn1_h2
+ý˜ 7DnwŸ DGLrD
+ layer_128_1_scale1_h Scale layer_128_1_bn1_h" layer_128_1_bn1_h2
+ layer_128_1_relu1 ReLU layer_128_1_bn1_h" layer_128_1_bn1_hP
+ +layer_128_1_bn1_h_layer_128_1_relu1_0_split Split
+layer_128_1_bn1_h"-layer_128_1_bn1_h_layer_128_1_relu1_0_split_0"-layer_128_1_bn1_h_layer_128_1_relu1_0_split_1P
+ layer_128_1_conv1_h Convolution -layer_128_1_bn1_h_layer_128_1_relu1_0_split_0" layer_128_1_conv1_h2
+ msraB
+ constant
+ layer_128_1_bn2 BatchNorm layer_128_1_conv1_h" layer_128_1_conv1_h2
+ layer_128_1_scale2 Scale layer_128_1_conv1_h" layer_128_1_conv1_h2
+ layer_128_1_relu2 ReLU layer_128_1_conv1_h" layer_128_1_conv1_hP
+ layer_128_1_conv2 Convolution layer_128_1_conv1_h" layer_128_1_conv22
+ 5S8V B923
+º˜Õ j9oOB:UfN97
+ Ms:O),9H0j
+¡¹Ò s860 e793
+û PP97c Ng8L
+ÁÐ› 9E2-9mEK: k9O1w9
+×É 8i[o:C0c9o
+‰ Lm9)3K9sk19
+‡ y7eM¦¹ jPs9
+™Â¸ 8Fsi93+q:sw
+–ú¢ 94k6 99929
+Í 9mVP¹Ê nT86
+ msraB
+ constant
+ layer_128_1_conv_expand_h Convolution -layer_128_1_bn1_h_layer_128_1_relu1_0_split_1" layer_128_1_conv_expand_h2
+ msraB
+ constant
+ layer_128_1_sum Eltwise layer_128_1_conv2 layer_128_1_conv_expand_h" layer_128_1_sumP
+ layer_256_1_bn1 BatchNorm layer_128_1_sum" layer_256_1_bn12
+ layer_256_1_scale1 Scale layer_256_1_bn1" layer_256_1_bn12
+ layer_256_1_relu1 ReLU layer_256_1_bn1" layer_256_1_bn1P
+ )layer_256_1_bn1_layer_256_1_relu1_0_split Split
+layer_256_1_bn1"+layer_256_1_bn1_layer_256_1_relu1_0_split_0"+layer_256_1_bn1_layer_256_1_relu1_0_split_1"+layer_256_1_bn1_layer_256_1_relu1_0_split_2P
+ layer_256_1_conv1 Convolution +layer_256_1_bn1_layer_256_1_relu1_0_split_0" layer_256_1_conv12
+ ¤ j99Bk9 à° 9YZw
+ ]M8j_g9v@Z9
+ l8CN0¹Ø· \6VEn8
+¸Œ gt8e&69xRb8 
+
+Þ b9RN3:CY\3
+ xavierB
+ constant
+ conv9_2_mbox_conf_perm Permute conv9_2_mbox_conf" conv9_2_mbox_conf_permP
+ conv9_2_mbox_conf_flat Flatten conv9_2_mbox_conf_perm" conv9_2_mbox_conf_flatP
+ conv9_2_mbox_priorbox PriorBox  conv9_2_h_conv9_2_relu_0_split_2 data_data_0_split_6" conv9_2_mbox_priorboxP
+ mbox_loc Concat conv4_3_norm_mbox_loc_flat fc7_mbox_loc_flat conv6_2_mbox_loc_flat conv7_2_mbox_loc_flat conv8_2_mbox_loc_flat conv9_2_mbox_loc_flat" mbox_locP
+ mbox_conf Concat conv4_3_norm_mbox_conf_flat fc7_mbox_conf_flat conv6_2_mbox_conf_flat conv7_2_mbox_conf_flat conv8_2_mbox_conf_flat conv9_2_mbox_conf_flat" mbox_confP
+ mbox_priorbox Concat conv4_3_norm_mbox_priorbox fc7_mbox_priorbox conv6_2_mbox_priorbox conv7_2_mbox_priorbox conv8_2_mbox_priorbox conv9_2_mbox_priorbox"
+ mbox_priorboxP
+ mbox_loss MultiBoxLoss mbox_loc mbox_conf
+ mbox_priorbox label" mbox_loss-
