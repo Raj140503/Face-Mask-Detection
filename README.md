@@ -6,3 +6,5 @@ Requirements -
 5. opencv-python==4.2.0.*
 6. matplotlib==3.2.1
 7. scipy==1.4.1
+
+Check the PREVIEW of "face_detector.model" file first then copy it.
